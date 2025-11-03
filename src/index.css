@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0F2A22;
+  --color-bg: #F6F3EE;
+  --color-text: #0B0B0C;
+  --color-accent: #C08A3E;
+  --color-accent-rgb: 192, 138, 62;
+  --color-cream: #FFF8F0;
+  --color-surface: rgba(255, 255, 255, 0.7);
+  --h1: clamp(2.4rem, 2.2vw + 1.6rem, 4.2rem);
+  --h2: clamp(2rem, 1.6vw + 1.2rem, 3.2rem);
+  --body: clamp(1rem, 0.4vw + 0.9rem, 1.15rem);
+}
+
+html.dark {
+  --color-primary: #0F2A22; /* Keep for accent on dark */
+  --color-bg: #0B0B0C;
+  --color-text: #F6F3EE;
+  --color-accent: #D19A53;
+  --color-accent-rgb: 209, 154, 83;
+  --color-cream: #141416;
+  --color-surface: rgba(11, 11, 12, 0.6);
+}
+
+body {
+  font-family: 'Inter Tight', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--body);
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+}
+
+h1 { font-size: var(--h1); }
+h2 { font-size: var(--h2); }
+
+.font-heading { font-family: 'Fraunces', serif; }
+.font-body { font-family: 'Inter Tight', sans-serif; }
+
+.smooth-transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 250ms;
+}
+
+.marquee-content {
+  animation: marquee 40s linear infinite;
+}
+
+.btn-pulse {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0.4);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(var(--color-accent-rgb), 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smooth-transition { transition: none; }
+  .marquee-content { animation: none; }
+  .btn-pulse { animation: none; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
