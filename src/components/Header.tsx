@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" aria-label="Volver a la página de inicio" className="flex items-center gap-x-3">
-            <img src="../../public/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto dark:invert smooth-transition" />
+            <img src="/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto dark:invert smooth-transition" />
             <span className="font-heading text-xl font-bold tracking-wider hidden sm:block">Hostal El Cerro</span>
           </Link>
 

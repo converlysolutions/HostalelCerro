@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
         {/* Logo */}
         <div className="mb-8 inline-block">
           <Link to="/" aria-label="Volver a la página de inicio" className="inline-flex items-center gap-x-3">
-              <img src="../../public/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto dark:invert smooth-transition" />
+              <img src="/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto dark:invert smooth-transition" />
               <span className="font-heading text-xl font-bold">Hostal El Cerro</span>
           </Link>
         </div>
