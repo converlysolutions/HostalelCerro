@@ -64,7 +64,7 @@ export const RestaurantPage: React.FC = () => {
             <h2 className="font-heading text-[var(--h2)]">Disfruta de la comida tanto como las vistas.</h2>
         </div>
         <div className="relative w-full overflow-hidden group">
-          <div className="flex marquee-content group-hover:[animation-play-state:paused]">
+          <div className="flex marquee-content group-hover:[animation-play-state:paused] flex-nowrap w-max">
             {repeatedImages.map((src, index) => (
               <div key={index} className="flex-shrink-0 w-72 md:w-96 mx-4">
                 <img 

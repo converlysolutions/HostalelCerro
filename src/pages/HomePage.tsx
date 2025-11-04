@@ -137,7 +137,7 @@ const TestimonialMarquee: React.FC = () => {
                 </div>
                 <h2 className="text-2xl font-heading">Valoración media: {averageRating.toFixed(1)} / 5</h2>
             </div>
-            <div className="flex marquee-content">
+            <div className="flex marquee-content flex-nowrap w-max">
                 {repeatedTestimonials.map((testimonial, index) => (
                     <div key={index} className="flex-shrink-0 w-96 mx-4 p-8 bg-[var(--color-cream)] rounded-2xl shadow-sm">
                         <p className="italic">"{testimonial.text}"</p>

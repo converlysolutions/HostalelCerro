@@ -51,7 +51,7 @@ h2 { font-size: var(--h2); }
 }
 
 .marquee-content {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .btn-pulse {
@@ -81,7 +81,7 @@ h2 { font-size: var(--h2); }
 /* Media query para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
   .marquee-content {
-    animation: marquee 5s linear infinite; /* Duración más rápida para móvil */
+    animation: marquee 25s linear infinite; /* Duración más rápida para móvil */
   }
 }
 
