@@ -40,12 +40,20 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" aria-label="Volver a la página de inicio" className="flex items-center gap-x-3">
-            <img src="/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto dark:invert smooth-transition" />
-            <span className="font-heading text-xl font-bold tracking-wider hidden sm:block">Hostal El Cerro</span>
+          <Link to="/" aria-label="Volver a la página de inicio" className="flex items-center gap-x-3 mr-4">
+            
+            {/* 1. Logo: Visible siempre, EXCEPTO entre 'lg' y 'xl' */}
+            <img src="/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto dark:invert smooth-transition block lg:hidden xl:block" />
+            
+            {/* 2. Título Abreviado (H): Visible SOLO entre 'lg' (1024px) y 'xl' (1280px) */}
+            <span className="font-heading text-xl font-bold tracking-wider hidden lg:block xl:hidden">H</span>
+            
+            {/* 3. Título Completo: Visible en 'sm', Oculto en 'lg', visible de nuevo en 'xl' */}
+            <span className="font-heading text-xl font-bold tracking-wider hidden sm:block lg:hidden xl:block">Hostal El Cerro</span>
+
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-8">
             {NAV_LINKS.map((link) => (
               <NavLink key={link.href} href={link.href}>{link.label}</NavLink>
             ))}
