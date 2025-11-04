@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
             <X size={28} />
           </button>
         </div>
-        <nav className="flex flex-col items-center justify-center h-full space-y-8 -mt-20">
+        <nav className="flex flex-col items-center justify-center h-screen w-full space-y-8 bg-[var(--color-bg)]">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
                 {link.label}

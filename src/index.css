@@ -51,7 +51,7 @@ h2 { font-size: var(--h2); }
 }
 
 .marquee-content {
-  animation: marquee 40s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .btn-pulse {
@@ -78,9 +78,16 @@ h2 { font-size: var(--h2); }
   }
 }
 
+/* Media query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .marquee-content {
+    animation: marquee 5s linear infinite; /* Duración más rápida para móvil */
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .smooth-transition { transition: none; }
-  .marquee-content { animation: none; }
+  .marquee-content { animation: 25s; }
   .btn-pulse { animation: none; }
 }
 
