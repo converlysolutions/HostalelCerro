@@ -78,15 +78,18 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-50 bg-[var(--color-bg)] transform ${
+        className={`fixed inset-0 z-50 transform ${ // Se quita el fondo de aquí
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out lg:hidden`}
       >
-        <div className="flex justify-end p-6">
+        {/* El botón de X se posiciona absolutamente y por encima del nav (z-10) */}
+        <div className="absolute top-0 right-0 z-10 flex justify-end p-6">
           <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu">
             <X size={28} />
           </button>
         </div>
+        
+        {/* El nav tiene el fondo, altura de pantalla completa y centra su contenido */}
         <nav className="flex flex-col items-center justify-center h-screen w-full space-y-8 bg-[var(--color-bg)]">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
