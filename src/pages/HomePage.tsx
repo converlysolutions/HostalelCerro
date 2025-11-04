@@ -165,7 +165,7 @@ export const HomePage: React.FC = () => {
            <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
-          <h1 className="font-heading text-white text-[var(--h1)] leading-tight">Descanso con vistas a Gredos</h1>
+          <h1 className="font-heading text-white text-[var(--h1)] leading-tight">Descanso con vistas al Valle del Tiétar</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg opacity-90">Habitaciones luminosas, spa y piscina en plena naturaleza. Tu refugio solo para adultos.</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/habitaciones" className="bg-white/90 text-[var(--color-primary)] px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-white smooth-transition">Ver habitaciones</Link>
