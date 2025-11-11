@@ -90,11 +90,11 @@ export const ContactPage: React.FC = () => {
             <div className="flex flex-wrap items-baseline gap-x-2">
               <p className="opacity-80">Teléfonos:</p>
               <div className="flex flex-wrap items-center gap-x-2">
-                <a href="tel:920389103" className="underline opacity-80">920389103</a>
+                <a href="tel:607733360" className="underline opacity-80">607733360</a>
                 <span className="opacity-50 select-none">|</span>
                 <a href="tel:620555505" className="underline opacity-80">620555505</a>
                 <span className="opacity-50 select-none">|</span>
-                <a href="tel:607733360" className="underline opacity-80">607733360</a>
+                <a href="tel:920389103" className="underline opacity-80">920389103</a>
               </div>
             </div>
             <p className="mt-4 font-bold text-sm text-[var(--color-accent)]">Recuerda: nuestro alojamiento es exclusivamente para adultos.</p>

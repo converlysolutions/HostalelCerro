@@ -166,7 +166,6 @@ export const HomePage: React.FC = () => {
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
           <h1 className="font-heading text-white text-[var(--h1)] leading-tight">Descanso con vistas a Gredos</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg opacity-90">Habitaciones luminosas, spa y piscina en plena naturaleza. Tu refugio solo para adultos.</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/habitaciones" className="bg-white/90 text-[var(--color-primary)] px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-white smooth-transition">Ver habitaciones</Link>
             <button onClick={openBookingModal} className="bg-[var(--color-accent)] text-white px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:opacity-90 smooth-transition">Reservar ahora</button>
@@ -267,11 +266,11 @@ export const HomePage: React.FC = () => {
                     <div className="flex flex-wrap items-baseline gap-x-2">
                         <p><strong>Teléfonos:</strong></p>
                         <div className="flex flex-wrap items-center gap-x-2">
-                            <a href="tel:920389103" className="underline">920389103</a>
+                            <a href="tel:607733360" className="underline">607733360</a>
                             <span className="opacity-50 select-none">|</span>
                             <a href="tel:620555505" className="underline">620555505</a>
                             <span className="opacity-50 select-none">|</span>
-                            <a href="tel:607733360" className="underline">607733360</a>
+                            <a href="tel:920389103" className="underline">920389103</a>
                         </div>
                     </div>
                 </div>

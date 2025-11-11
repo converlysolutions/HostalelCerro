@@ -42,7 +42,7 @@ export const RestaurantPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <h2 className="font-heading text-[var(--h2)]">Descubre Nuestra Carta</h2>
           <p className="mt-4 opacity-80 leading-relaxed">
-            Te invitamos a un viaje culinario donde los sabores auténticos de la Sierra de Gredos son los protagonistas. Nuestra cocina rinde homenaje a la tierra, con una especialidad en las magníficas carnes de Ávila, siempre acompañadas por una cuidada selección de vinos locales. De lunes a viernes, te ofrecemos un delicioso menú diario. Si deseas deleitarte con un asado o una caldereta de cabrito memorables, te agradecemos que nos avises con antelación; nos aseguraremos de que esté perfecto a tu llegada.
+            Nuestra cocina rinde homenaje a la Sierra de Gredos, con especialidad en las magníficas carnes de Ávila y una cuidada selección de vinos locales. De lunes a viernes ofrecemos menú diario.
           </p>
           <div className="mt-12">
             <a

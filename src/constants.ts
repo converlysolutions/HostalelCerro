@@ -2,9 +2,9 @@ import { NavLink } from './types';
 
 export const NAV_LINKS: NavLink[] = [
   { href: '#/habitaciones', label: 'Habitaciones' },
-  { href: '#/spa-bienestar', label: 'Spa & Bienestar' },
+  { href: '#/spa-bienestar', label: 'Bienestar' },
   { href: '#/restaurante', label: 'Restaurante' },
-  { href: '#/eventos', label: 'Eventos' },
+  { href: '#/eventos', label: 'Celebraciones' },
   { href: '##explora-gredos', label: 'Actividades' },
   { href: '##encuentranos', label: 'Localización' },
   { href: '#/contacto', label: 'Contacto' },

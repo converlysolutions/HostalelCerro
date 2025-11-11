@@ -4,7 +4,7 @@ import { NavLink as RouterNavLink, Link } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { useApp } from '../App';
 import { NAV_LINKS } from '../constants';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Sun, Moon, Menu, X, Ban } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,16 +41,8 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" aria-label="Volver a la página de inicio" className="flex items-center gap-x-3 mr-4">
-            
             {/* 1. Logo: Visible siempre, EXCEPTO entre 'lg' y 'xl' */}
-            <img src="/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto dark:invert smooth-transition block lg:hidden xl:block" />
-            
-            {/* 2. Título Abreviado (H): Visible SOLO entre 'lg' (1024px) y 'xl' (1280px) */}
-            <span className="font-heading text-xl font-bold tracking-wider hidden lg:block xl:hidden">H</span>
-            
-            {/* 3. Título Completo: Visible en 'sm', Oculto en 'lg', visible de nuevo en 'xl' */}
-            <span className="font-heading text-xl font-bold tracking-wider hidden sm:block lg:hidden xl:block">Hostal El Cerro</span>
-
+            <img src="/img/site/logo.png" alt="Logo de Hostal El Cerro" className="h-12 w-auto smooth-transition block lg:hidden xl:block" />
           </Link>
 
           <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-8">
@@ -60,19 +52,51 @@ export const Header: React.FC = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="p-2 rounded-full hover:bg-[var(--color-surface)] smooth-transition"
-            >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
-            <button
-              onClick={openBookingModal}
-              className="hidden lg:inline-block bg-[var(--color-accent)] text-white px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider hover:opacity-90 smooth-transition"
-            >
-              Reservar
-            </button>
+            {/* Tooltip Icons - Desktop and Mobile */}
+            <div className="flex items-center space-x-3">
+              {/* +18 Icon with Tooltip */}
+              <div className="relative group">
+                <div className="p-2 rounded-full hover:bg-[var(--color-surface)] smooth-transition cursor-pointer">
+                  <div className="w-7 h-7 rounded-full border-2 border-[var(--color-text)] flex items-center justify-center text-xs font-bold text-[var(--color-text)]">
+                    18+
+                  </div>
+                </div>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 bg-[var(--color-cream)] text-[var(--color-text)] text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible smooth-transition whitespace-nowrap shadow-lg border border-[var(--color-text)]/10">
+                  Solo adultos
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 -mb-1 border-4 border-transparent border-b-[var(--color-cream)]"></div>
+                </div>
+              </div>
+
+              {/* No Pets Icon with Tooltip */}
+              <div className="relative group">
+                <div className="p-2 rounded-full hover:bg-[var(--color-surface)] smooth-transition cursor-pointer">
+                  <div className="relative w-7 h-7 flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-text)]">
+                      {/* Paw print */}
+                      <circle cx="11" cy="4" r="2"/>
+                      <circle cx="18" cy="8" r="2"/>
+                      <circle cx="20" cy="16" r="2"/>
+                      <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>
+                    </svg>
+                    <Ban size={28} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[var(--color-text)]" strokeWidth={2} />
+                  </div>
+                </div>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 bg-[var(--color-cream)] text-[var(--color-text)] text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible smooth-transition whitespace-nowrap shadow-lg z-50 border border-[var(--color-text)]/10">
+                  NO admitimos mascotas
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 -mb-1 border-4 border-transparent border-b-[var(--color-cream)]"></div>
+                </div>
+              </div>
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+                className="p-2 rounded-full hover:bg-[var(--color-surface)] smooth-transition"
+              >
+                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              </button>
+            </div>
+
             <button
               className="lg:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

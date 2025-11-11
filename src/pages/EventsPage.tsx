@@ -17,16 +17,16 @@ const mediaGallery = [
 
 const ImageLightbox: React.FC<{ imageUrl: string; onClose: () => void }> = ({ imageUrl, onClose }) => {
     return (
-        <div className="fixed inset-0 bg-black/80 z-[110] flex items-center justify-center p-4 animate-fade-in" onClick={onClose}>
+        <div className="fixed inset-0 bg-black/80 z-[110] flex items-center justify-center p-4 animate-fade-in overflow-y-auto" onClick={onClose}>
             <button 
                 onClick={onClose} 
-                className="absolute top-4 right-4 text-white z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 smooth-transition"
+                className="fixed top-4 right-4 text-white z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 smooth-transition"
                 aria-label="Cerrar vista ampliada"
             >
                 <X size={32}/>
             </button>
-            <div className="relative w-full max-w-4xl max-h-[90vh] mx-auto" onClick={e => e.stopPropagation()}> {/* Ajuste de tamaño del lightbox */}
-                <img src={imageUrl} alt="Contenido multimedia ampliado" className="w-full h-full object-contain rounded-lg"/>
+            <div className="relative w-full max-w-4xl my-auto mx-auto py-8" onClick={e => e.stopPropagation()}>
+                <img src={imageUrl} alt="Contenido multimedia ampliado" className="w-full h-auto object-contain rounded-lg"/>
             </div>
         </div>
     );
@@ -48,7 +48,7 @@ export const EventsPage: React.FC = () => {
            <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-[var(--h1)] leading-tight">Bodas y Eventos</h1>
+          <h1 className="font-heading text-[var(--h1)] leading-tight">Celebraciones</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg opacity-90">Celebra tu día especial en un entorno inolvidable, donde cada detalle está pensado para crear recuerdos imborrables.</p>
         </div>
       </section>
@@ -109,6 +109,14 @@ export const EventsPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="font-heading text-[var(--h2)]">Propuestas Gastronómicas</h2>
             <p className="mt-2 max-w-xl mx-auto opacity-70">Nuestros menús de boda están elaborados con los mejores productos de la tierra, combinando tradición y creatividad para ofrecer una experiencia culinaria inolvidable.</p>
+            <div className="mt-8">
+              <Link
+                to="/contacto"
+                className="inline-flex items-center gap-3 bg-[var(--color-accent)] text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider hover:opacity-90 smooth-transition"
+              >
+                Pide tu presupuesto
+              </Link>
+            </div>
           </div>
           
           <div className="flex justify-center border-b border-[var(--color-text)]/20 mb-8">
@@ -129,13 +137,13 @@ export const EventsPage: React.FC = () => {
               <div key={index} className={`${activeTab === index ? 'block animate-fade-in' : 'hidden'}`}>
                 <button
                   onClick={() => setLightboxImage(menu.image)}
-                  className="group relative block max-w-sm mx-auto cursor-pointer aspect-[4/5]" // Añadido aspect-ratio y ajustado max-w
+                  className="group relative block max-w-sm mx-auto cursor-pointer aspect-[4/5]"
                   aria-label={`Ver ${menu.name} en grande`}
                 >
                   <img
                     src={menu.image}
                     alt={`Vista previa de ${menu.name}`}
-                    className="w-full h-full object-cover rounded-2xl shadow-lg" // object-cover
+                    className="w-full h-full object-cover rounded-2xl shadow-lg"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 smooth-transition flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-2xl">
                       <ZoomIn size={48} className="text-white"/>
@@ -151,12 +159,8 @@ export const EventsPage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <Heart size={48} className="mx-auto text-[var(--color-accent)] mb-4" />
           <h2 className="font-heading text-[var(--h2)]">Hagamos Realidad Tu Sueño</h2>
-          <p className="mt-4 opacity-80 leading-relaxed">
-            Contacta con nuestro equipo de eventos para recibir una propuesta personalizada y comenzar a planificar el día más feliz de vuestras vidas. Estamos deseando escuchar vuestra historia.
-          </p>
-          <div className="mt-12">
+          <div className="mt-8">
             <Link
               to="/contacto"
               className="inline-flex items-center gap-3 bg-[var(--color-accent)] text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider hover:opacity-90 smooth-transition"
@@ -164,6 +168,7 @@ export const EventsPage: React.FC = () => {
               Solicitar Información
             </Link>
           </div>
+          <Heart size={48} className="mx-auto text-[var(--color-accent)] mt-8" />
         </div>
       </section>
 

@@ -87,12 +87,10 @@ const CustomSelect: React.FC<{
 
 export const RoomsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedView, setSelectedView] = useState<string>('all');
   const [sortOrder, setSortOrder] = useState<string>('price-asc');
 
   const filteredRooms = rooms
     .filter(room => selectedCategory === 'all' || room.category === selectedCategory)
-    .filter(room => selectedView === 'all' || room.view === selectedView)
     .sort((a, b) => {
       if (sortOrder === 'price-asc') {
         return a.priceFrom - b.priceFrom;
@@ -104,10 +102,6 @@ export const RoomsPage: React.FC = () => {
     });
   
   const categoryOptions = roomCategories.map(c => ({ value: c.id, label: c.name }));
-  const viewOptions = [
-    { value: 'montaña', label: 'Montaña' },
-    { value: 'piscina', label: 'Piscina' }
-  ];
   const sortOptions = [
       { value: 'price-asc', label: 'Precio (menor a mayor)' },
       { value: 'price-desc', label: 'Precio (mayor a menor)' }
@@ -136,12 +130,6 @@ export const RoomsPage: React.FC = () => {
                 options={categoryOptions}
                 value={selectedCategory}
                 onChange={setSelectedCategory}
-            />
-            <CustomSelect
-                placeholder="Todas las vistas"
-                options={viewOptions}
-                value={selectedView}
-                onChange={setSelectedView}
             />
             <div className="md:ml-auto">
                  <CustomSelect

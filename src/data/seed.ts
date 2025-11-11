@@ -11,7 +11,7 @@ export const rooms: Room[] = [
     id: 1,
     name: 'Doble Estándar',
     slug: 'doble-estandar',
-    priceFrom: 124,
+    priceFrom: 114,
     surface: 22,
     maxOccupancy: 2,
     view: 'montaña',
@@ -260,23 +260,6 @@ export const experiences: Experience[] = [
     summary: 'Descubre la rica avifauna desde "hides" de observación o sumérgete en el mundo de las abejas en el Aula-Museo.', 
     description: 'Gredos es un hervidero de vida. Para los ornitólogos, los "hides" de Navarredonda ofrecen una oportunidad única para observar aves en su hábitat. Y para una experiencia familiar fascinante, el Aula-Museo Abejas del Valle te desvela los secretos de la apicultura.', 
     image: '/img/experiencias/santuarios-fauna-large.webp'
-  },
-  { 
-    id: 5, 
-    name: 'Rutas a Caballo', 
-    slug: 'rutas-a-caballo', 
-    summary: 'Recorre veredas inhóspitas y caminos históricos a lomos de un caballo, una forma diferente de sentir Gredos.', 
-    description: 'Conecta con la naturaleza de una manera más profunda. Las rutas a caballo te llevan por vías de tierra y veredas de montaña, explorando rincones de la sierra que son inaccesibles de otra forma. Una experiencia que combina aventura y tranquilidad.', 
-    image: '/img/experiencias/rutas_a_caballo_large.webp'
-// NOTA: He usado la URL 'rutas_a_caballo_large.webp' como la subiste.
-  },
-  { 
-    id: 6, 
-    name: 'Aventura y Adrenalina', 
-    slug: 'aventura-adrenalina', 
-    summary: 'Libera estrés con una partida de Paintball o explora los encinares de Robledoso y el monumento megalítico de Cantogordo.', 
-    description: 'Si buscas una dosis de adrenalina, organiza una partida de Paintball con amigos para luchar contra el estrés. O si prefieres un paseo tranquilo con un toque de misterio, los encinares de Robledoso y el monumento megalítico de Cantogordo te esperan.', 
-    image: '/img/experiencias/aventura-adrenalina-large.webp'
   },
 ];
 
