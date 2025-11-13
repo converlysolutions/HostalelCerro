@@ -80,7 +80,16 @@ export const SpaPage: React.FC = () => {
       <section className="py-20 bg-[var(--color-cream)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-[var(--h2)]">Masajes Concertados</h2>
+            <div className="inline-flex items-center gap-2 group relative">
+              <h2 className="font-heading text-[var(--h2)]">Masajes Concertados</h2>
+              <svg className="w-5 h-5 text-[var(--color-accent)] cursor-help" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
+              </svg>
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-2 bg-[var(--color-cream)] text-[var(--color-text)] text-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible smooth-transition whitespace-nowrap z-10 border border-[var(--color-accent)]/20">
+                Los masajes deben solicitarse con antelación
+                <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[var(--color-cream)]"></div>
+              </div>
+            </div>
             <p className="mt-2 max-w-xl mx-auto opacity-70">Un ritual diseñado para armonizar cuerpo y mente.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
