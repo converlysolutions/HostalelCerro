@@ -2,7 +2,12 @@ import React from 'react';
 
 export const SpaPage: React.FC = () => {
   const treatments = [
-    { name: 'Masaje Relajante Gredos', duration: '60 min', price: '80€', description: 'Un masaje de cuerpo completo con aceites esenciales de plantas locales para liberar tensiones.' },
+    { name: 'Masaje Bienestar', duration: '55 min', price: '35€', description: 'Masaje antiestreñimiento para mejorar el tránsito intestinal y aliviar molestias digestivas.' },
+    { name: 'Masaje Belleza', duration: '55 min', price: '35€', description: 'Masaje anticelulítico en vientre, glúteos y muslos con envoltura para reducir la celulitis y mejorar la firmeza de la piel.' },
+    { name: 'Masaje Descontracturante', duration: '55 min', price: '35€', description: 'Zona a elegir: espalda más brazos o piernas. Ideal para liberar tensiones musculares y contracturas.' },
+    { name: 'Masaje Antiestrés', duration: '55 min', price: '35€', description: 'Masaje relajante en espalda, brazos y piernas boca abajo para eliminar el estrés y la tensión acumulada.' },
+    { name: 'Masaje Salud', duration: '55 min', price: '50€', description: 'Drenaje linfático en piernas para mejorar la circulación, reducir la retención de líquidos y aliviar la sensación de piernas cansadas.' },
+    { name: 'Masaje Deportivo', duration: '55 min', price: '35€', description: 'Pre-competición o post-competición con estiramientos en piernas. Perfecto para preparar o recuperar los músculos después del ejercicio.' },
   ];
 
   // All 9 images for the gallery
@@ -78,9 +83,9 @@ export const SpaPage: React.FC = () => {
             <h2 className="font-heading text-[var(--h2)]">Masajes Concertados</h2>
             <p className="mt-2 max-w-xl mx-auto opacity-70">Un ritual diseñado para armonizar cuerpo y mente.</p>
           </div>
-          <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {treatments.map(treatment => (
-              <div key={treatment.name} className="bg-[var(--color-bg)] p-6 rounded-2xl shadow-sm w-full max-w-md">
+              <div key={treatment.name} className="bg-[var(--color-bg)] p-6 rounded-2xl shadow-sm">
                 <div className="flex justify-between items-baseline">
                   <h3 className="font-heading text-xl">{treatment.name}</h3>
                   <span className="font-bold text-lg text-[var(--color-accent)]">{treatment.price}</span>
