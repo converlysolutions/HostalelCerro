@@ -9,6 +9,9 @@ export const RestaurantPage: React.FC = () => {
     '/img/paginas/restaurante/gallery-3-small.webp',
     '/img/paginas/restaurante/gallery-4-small.webp',
     '/img/paginas/restaurante/gallery-5-small.webp',
+    '/img/paginas/restaurante/gallery-6-small.webp',
+    '/img/paginas/restaurante/gallery-7-small.webp',
+    '/img/paginas/restaurante/gallery-8-small.webp',
   ];
   
   const galleryAlts = [
@@ -17,6 +20,9 @@ export const RestaurantPage: React.FC = () => {
     "Mesa para dos en un balcón con vistas al pueblo de Pedro Bernardo",
     "Vista cenital de una mesa puesta para dos en la terraza",
     "Terraza del restaurante con un espectacular atardecer naranja y vistas a la montaña",
+    "Interior del restaurante con mesas elegantemente decoradas",
+    "Detalle de la decoración y ambiente acogedor del comedor",
+    "Vista del comedor principal con manteles y cristalería preparados para el servicio",
   ];
 
   // Duplicate images for a seamless loop
